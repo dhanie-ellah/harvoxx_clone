@@ -55,7 +55,7 @@ nav,
 }
 
 header{
-    height: 100vh;
+    height: fit-content;
     background-color: var(--bg-color);
 }
 
@@ -90,6 +90,10 @@ nav .links{
     align-items: center;
 }
 
+nav i.bx-menu{
+    display: none;
+}
+
 .get-started{
     border: 3px solid var(--orange);
     padding: 5px 25px;
@@ -104,7 +108,7 @@ nav .links{
 /* LANDING PAGE */
 .home{
     display: flex;
-    padding: 20px 0;
+    padding: 27px 0;
     color: white;
 }
 
@@ -155,8 +159,8 @@ nav .links{
 /* ABOUT SECTION START */
 
 .about-us{
-    padding: 30px 0;
-    height: 100vh;
+    padding: 40px 0;
+    height: fit-content;
     width: 100%;
 }
 
@@ -193,6 +197,7 @@ nav .links{
 .bx{
     font-size: 35px;
     color: var(--orange);
+    margin-right: 5px;
 }
 
 .diversity,
@@ -214,7 +219,7 @@ nav .links{
 .impact p,
 .commitment p,
 .integrity p{
-    padding-left: 40px;
+    padding-left: 45px;
 }
 
 /* SERVICES */
@@ -229,10 +234,39 @@ nav .links{
 .services-header-text h1{
     font-size: 30px;
     color: var(--bg-color);
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     text-transform: uppercase;
     text-align: center;
 
+}
+
+div.rule-container{
+    display: flex;
+    justify-content: center;
+}
+
+div.rule{
+    margin-bottom: 50px;
+}
+
+.rule1{
+    position: relative;
+    top: 2.75px;
+    width: 120px;
+    height: 1.25px;
+    margin: auto;
+    border: none;
+    background-color: #ddd;
+}
+
+.rule2{
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 4px;
+    margin: auto;
+    border: none;
+    background-color: var(--orange);
 }
 
 .services-header-text p{
@@ -249,6 +283,26 @@ nav .links{
 .service{
     width: 50%;
     margin: 25px 0;
+}
+
+.service:hover img{
+    /* transform: scale(1.2); */
+    /* transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s; */
+}
+
+.service .text-wrapper{
+    border-top: 5px solid transparent;
+}
+
+.service:hover .text-wrapper{
+    border-top: 5px solid var(--orange);
+}
+
+.service:hover .text-wrapper h2{
+    color: var(--orange);
 }
 
 .services-outlined .image-wrapper{
@@ -290,6 +344,14 @@ nav .links{
     text-decoration: none;
 }
 
+.services-outlined .text-wrapper a:hover{
+    color: var(--orange);
+}
+
+.services-outlined .text-wrapper a:hover i{
+    color: var(--orange);
+}
+
 .text-wrapper a i{
     font-size: 12px;
     color: var(--gray);
@@ -308,8 +370,28 @@ nav .links{
     text-align: center;
     color: var(--bg-color);
     font-size: 35px;
+    /* margin-bottom: 50px; */
+}
+
+/* div.rule{
     margin-bottom: 50px;
 }
+
+.rule1{
+    width: 125px;
+    height: 1.5px;
+    margin: auto;
+    border: none;
+    background-color: #ddd;
+}
+
+.rule2{
+    width: 45px;
+    height: 3px;
+    margin: auto;
+    border: none;
+    background-color: var(--orange);
+} */
 
 .pricing-section img{
     width: 100%;
@@ -327,9 +409,29 @@ nav .links{
 .contact-head{
     color: var(--bg-color);
     font-size: 25px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     text-align: center;
 }
+
+/* div.rule{
+    margin-bottom: 50px;
+}
+
+.rule1{
+    width: 125px;
+    height: 1.5px;
+    margin: auto;
+    border: none;
+    background-color: #ddd;
+}
+
+.rule2{
+    width: 45px;
+    height: 3px;
+    margin: auto;
+    border: none;
+    background-color: var(--orange);
+} */
 
 .contact-body{
     display: flex;
@@ -399,13 +501,17 @@ input{
     border: .5px solid rgba(145, 145, 145, 0.55);
 }
 
+.input-flex{
+    display: flex;
+    gap: 15px;
+}
 input.name, input.email{
-    width: 48%;
+    width: 50%;
 }
 
-input.email{
+/* input.email{
     margin-left: 15px;
-}
+} */
 
 input.subject{
     width: 100%;
@@ -430,9 +536,9 @@ textarea{
 
 /* FOOTER */
 footer{
-    background: url(images/footer-bg.jpg) black;
+    background: url(images/footer-bg.jpg);
     background-size: cover;
-    height: 75vh;
+    height: fit-content;
     color: white;
 }
 
@@ -463,13 +569,15 @@ footer{
 }
 
 .subscribe{
-    width: 75%;
+    width: 50%;
     margin: auto;
-    margin-left: 26%;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
 }
 
 .subscribe-email{
-    width: 60%;
+    width: 100%;
     height: 2.6rem;
     padding: 0 25px;
     border-radius: 25px;
@@ -477,13 +585,245 @@ footer{
 }
 
 .subscribe-submit{
-    width: 15%;
+    width: 25%;
     height: 2.6rem;
     padding: 0;
     margin: 0;
-    position: relative;
     margin-left: -100px;
     border-radius: 25px;
     color: white;
     background-color: var(--orange);
+    position: absolute;
+    right: 0;
+}
+
+.footer p.copyright{
+    padding-bottom: 25px;
+}
+
+a.fixed{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.fixed:hover{
+    background-color: var(--orange);
+}
+
+.fixed i{
+    font-size: 25px;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    margin: 0;
+}
+
+/* RESPONSIVE NAVBAR */
+@media (max-width: 1048px){
+    nav div.links a{
+        display: none;
+    }
+
+    nav i.bx-menu{
+        display: block;
+        position: fixed;
+        right: 0;
+        padding-right: 25px;
+        padding-top: 15px;
+    }
+
+    .responsive{
+        display: block;
+        background-color: white;
+        width: 95%;
+        margin: auto;
+        height: 87vh;
+        position: absolute;
+        /* top: 100px; */
+        padding: 15px;
+        border-radius: 15px;
+        text-align: left;
+        top: 55px;
+        /* bottom: 25px; */
+        left: 0;
+        right: 0;
+    }
+
+    .responsive a{
+        display: block;
+        color: var(--bg-color);
+        margin-bottom: 25px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .responsive a:nth-child(1){
+        color: var(--orange);
+    }
+
+    .responsive .get-started{
+        border: none;
+        background-color: var(--bg-color);
+        padding: 12px;
+        color: white;
+        text-align: center;
+    }
+}
+
+/* MOBILE VIEW */
+@media (max-width: 750px){
+
+    body{
+        width: 100%;
+        margin: auto;
+    }
+
+    nav,
+    .home,
+    .about-us-container,
+    .services-container,
+    .pricing-section,
+    .contact-container,
+    .footer{
+        width: 90%;
+        margin: auto;
+    }
+
+    nav h1{
+        display: none;
+    }
+
+    /* HOME SECTION */
+    .home{
+        flex-wrap: wrap;
+    }
+
+    .home .text-wrapper{
+        text-align: center;
+        order: 2;
+        margin-bottom: 25px;
+    }
+
+    .home img{
+        width: 100%;
+        margin: 0;
+        order: 1;
+        margin-bottom: 50px;
+    }
+
+    /* ABOUT SECTION */
+    .about-us-container{
+        display: block;
+    }
+
+    .about-us-container img{
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .about-us-text{
+        width: 100%;
+        margin: auto;
+    }
+
+    .about-content{
+        display: block;
+        width: 100%;
+    }
+
+    div.diversity,
+    div.impact,
+    div.commitment,
+    div.integrity{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .about-content i{
+        margin-right: 10px;
+    }
+
+    .about-content p{
+        width: 100%;
+    }
+
+    /* SERVICES SECTION */
+    .services-outlined{
+        display: block;
+    }
+
+    .service{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    /* CONTACT SECTION */
+    .contact-body{
+        display: block;
+    }
+
+    .contact-left, .contact-right{
+        width: 100%;
+    }
+
+    .contact-left .contact-info{
+        display: block;
+    }
+
+    .contact-left .email-info,
+    .contact-left .call-info{
+    width: 100%;
+    margin-bottom: 25px;
+    }
+
+    input.name, input.email{
+        width: 100%;
+    }
+
+    input.email{
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    /* FOOTER SECTION */
+    .footer{
+        text-align: center;
+        padding: 0;
+        padding-top: 75px;
+    }
+
+    .subscribe{
+        width: 100%;
+        margin: auto;
+    }
+    
+    .subscribe-email{
+        width: 100%;
+        height: 2.6rem;
+        padding: 0 25px;
+        border-radius: 25px;
+        margin-bottom: 150px;
+    }
+    
+    .subscribe-submit{
+        width: 25%;
+        height: 2.6rem;
+        padding: 0;
+        margin: 0;
+        margin-left: -100px;
+        border-radius: 25px;
+        color: white;
+        background-color: var(--orange);
+    }
 }
