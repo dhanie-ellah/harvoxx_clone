@@ -30,6 +30,10 @@
     background-color: var(--orange);
 }
 
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 
 /* MAIN BODY FORMATTING */
 *{
@@ -39,10 +43,9 @@
 }
 
 body{
-    width: 100%;
     height: 100%;
     font-family: "Open sans";
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 nav,
@@ -618,32 +621,32 @@ footer{
     padding-bottom: 25px;
 }
 
-a.fixed{
-    width: 35px;
-    height: 35px;
+.fixed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 35px;
+    height: 35px; */
+    padding: 7px;
     border-radius: 50%;
     background-color: var(--bg-color);
-    text-align: center;
     position: fixed;
     bottom: 20px;
     right: 20px;
     cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    display: none;
 }
 
-a.fixed:hover{
+.fixed:hover{
     background-color: var(--orange);
 }
 
 .fixed i{
     font-size: 25px;
-    bottom: 20px;
-    right: 20px;
     color: white;
     margin: 0;
+    padding: 0;
 }
 
 /* RESPONSIVE NAVBAR */
@@ -780,14 +783,14 @@ a.fixed:hover{
     }
 
     /* SERVICES SECTION */
-    .services-outlined{
+    /* .services-outlined{
         display: block;
     }
 
     .service{
         width: 100%;
         margin-bottom: 50px;
-    }
+    } */
 
     /* CONTACT SECTION */
     .contact-body{
